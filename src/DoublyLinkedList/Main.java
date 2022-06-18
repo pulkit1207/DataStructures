@@ -25,5 +25,17 @@ public class Main {
 
         System.out.println(myDLL.get(1).value);
         System.out.println();
+
+        myDLL.set(1, 7);
+        myDLL.printList();
+        System.out.println();
+
+        myDLL.insert(1, 3);
+        myDLL.printList();
+        System.out.println();
+
+        myDLL.remove(1);
+        myDLL.printList();
+        System.out.println();
     }
 }

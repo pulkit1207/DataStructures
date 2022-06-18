@@ -110,5 +110,34 @@ public class DoublyLinkedList {
         return false;
     }
 
+    public boolean insert(int index, int value) {
+        if (index < 0 || index > length) return false;
+        if (index == length) {
+            append(value);
+            return true;
+        }
+        Node newNode = new Node(value);
+        Node before = get(index - 1);
+        Node after = before.next;
+        newNode.previous = before;
+        newNode.next = after;
+        before.next = newNode;
+        after.previous = newNode;
+        length++;
+        return true;
+    }
+
+    public Node remove(int index) {
+        if (index < 0 || index >= length) return null;
+        if (index == 0) return removeFirst();
+        if (index == length - 1) return removeLast();
+        Node temp = get(index);
+        temp.next.previous = temp.previous;
+        temp.previous.next = temp.next;
+        temp.previous = null;
+        temp.next = null;
+        length--;
+        return temp;
+    }
 
 }
