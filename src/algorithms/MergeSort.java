@@ -35,10 +35,10 @@ public class MergeSort {
         return combined;
     }
 
-    public static int[] mergeSort(int[] array){
-        if (array.length == 1 ) return array;
+    public static int[] mergeSort(int[] array) {
+        if (array.length == 1) return array;
 
-        int middle = array.length/ 2;
+        int middle = array.length / 2;
 
         int[] leftArray = Arrays.copyOfRange(array, 0, middle);
         int[] rightArray = Arrays.copyOfRange(array, middle, array.length);
